@@ -29,6 +29,7 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public CreatedBrandResponse add(CreateBrandRequest createBrandRequest) {
+        brandBusinessRules.brandNameCanNotBeDuplicate(createBrandRequest.getName()); // rules
         Brand brand = modelMapperService.forRequest().map(createBrandRequest,Brand.class);
         Brand createdBrand = brandRepository.add(brand);
         CreatedBrandResponse createdBrandResponse = modelMapperService.forResponse().map(createdBrand,CreatedBrandResponse.class);
