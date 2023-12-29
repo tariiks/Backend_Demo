@@ -9,6 +9,7 @@ import org.etiya.core.utilities.abstracts.ModelMapperService;
 import org.etiya.dataAccess.abstracts.BrandRepository;
 import org.etiya.entities.Brand;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,4 +42,23 @@ public class BrandServiceImpl implements BrandService {
                 result.stream().map(brand -> modelMapperService.forResponse().map(brand,GetAllBrandResponse.class)).collect(Collectors.toList());
         return responses;
     }
+
+    /*.
+    // CreatedBrandResponse other type
+    // Entry data each all
+    @Override
+    public CreatedBrandResponse add(CreateBrandRequest createBrandRequest) {
+        Brand brand = new Brand();
+        brand.setName(createBrandRequest.getName());
+        brand.setId((int)Math.random());
+        brand.setCreatedDate(LocalDateTime.now());
+        Brand createdBrand = brandRepository.add(brand);
+        CreatedBrandResponse createdBrandResponse = new CreatedBrandResponse();
+        createdBrandResponse.setName(createdBrand.getName());
+        createdBrandResponse.setId(createdBrand.getId());
+        createdBrandResponse.setCreatedDate(createdBrand.getCreatedDate());
+        return createdBrandResponse;
+    }
+    .*/
+
 }
