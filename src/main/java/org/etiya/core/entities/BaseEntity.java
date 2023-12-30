@@ -3,7 +3,6 @@ package org.etiya.core.entities;
 import lombok.*;
 
 import java.time.LocalDateTime;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

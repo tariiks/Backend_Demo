@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 
-public class GetAllBrandResponse {
+public class CreatedModelResponse {
 
     private int id;
     private String name;

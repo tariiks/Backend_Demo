@@ -5,7 +5,7 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 
-public class CreateBrandRequest {
+public class CreateTransmissionRequest {
 
     private String name;
 

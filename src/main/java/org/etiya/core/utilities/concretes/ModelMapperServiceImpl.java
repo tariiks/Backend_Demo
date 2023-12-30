@@ -4,11 +4,11 @@ import org.etiya.core.utilities.abstracts.ModelMapperService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
-public class ModelMapperManager implements ModelMapperService {
+public class ModelMapperServiceImpl implements ModelMapperService {
 
     private ModelMapper modelMapper;
 
-    public ModelMapperManager(ModelMapper modelMapper) {
+    public ModelMapperServiceImpl(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 

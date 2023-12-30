@@ -4,7 +4,6 @@ import lombok.*;
 import org.etiya.core.entities.BaseEntity;
 
 import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

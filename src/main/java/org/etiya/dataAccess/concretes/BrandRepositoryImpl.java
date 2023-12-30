@@ -2,7 +2,6 @@ package org.etiya.dataAccess.concretes;
 
 import org.etiya.dataAccess.abstracts.BrandRepository;
 import org.etiya.entities.Brand;
-import org.etiya.entities.Model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,6 +18,7 @@ public class BrandRepositoryImpl implements BrandRepository {
         brands.add(brand);
         return brand;
     }
+
     @Override
     public List<Brand> getAll() {
         return brands;
