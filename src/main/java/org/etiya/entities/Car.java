@@ -9,7 +9,6 @@ import org.etiya.core.entities.BaseEntity;
 public class Car extends BaseEntity<Integer> {
 
     private String name;
-
     private Model model;
     private Transmission transmission;
     private Fuel fuel;

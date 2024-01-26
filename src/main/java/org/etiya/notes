@@ -1,0 +1,63 @@
+- IoC: Birbirine bağımlılığı daha az olan nesneler oluşturmayı
+amaçlayan yazılım geliştirme prensibidir.
+
+- Dependency Injection: Bir sınıf içinde başka bir sınıf nesnesi kullanılacaksa
+new ile oluşturulmaması gerektiğini söyler.
+
+- ORM: Veritabanında yer alan tablo ve alanları nesne olarak kullanmamıza
+imkan veren yazılım mimarisidir.
+
+- Hibernate: Veritabanı işlemlerini java sınıfları ile doğrudan ilişki kurmak yerine
+nesnelerin saklanması ve yönetilmesi yoluyla yönetir.
+
+- Spring: Java platformunu kullanarak uygulama geliştirilmesine yardımcı olan bir frameworktur.
+Spring yaklaşık 20 modülden oluşur.
+
+- Spring Boot java programlama dili içerisinde geliştirilmiş, içinde eklenmiş
+sunucusu bulunan ayrıca kuruluma ihtiyaç duyulmayan framework.
+
+- POM XML: Proje konfigurasyonlarını içeren dosyadır.
+
+- Maven: Java geliştiricileri için gerekli uygulamaları saklar.
+- Geliştirme süreçlerini iyileştirmek, kolaylaştırmak ve dokumantasyon sağlamak için
+kullanılan bir araçtır.
+
+- Dependency: Bağımlılıktır. Başka birisi tarafından yazılmış bir kütüphane kullanılıyorsa
+bu bizim bağımlılığımızdır.
+
+- Repository: Bağımlılıkların tutulduğu yer.
+
+@Entity >> DB nesnesi olduğunu belirtir, tabloyu temsil eder
+@Table(name = " ") >> Hangi tabloya karşılık geldiğini belirtir
+@Column(name = " ") >> Değişkenlerin hangi kolona karşılık geldiğini belirtir.
+@ID >> ID
+@GeneretedValue(strategy = GenerationType.IDENTYTY) >> ID otomatik artan
+@OneToMany(mappedBy = "model") >> List gibi, birden çoka
+@ManyToOne @JoinColumn(name = " ") >> İlişkili sütunları ifade eder
+
+- DB işlemleri
+  private EntityManager entityManager;
+  @Transactional: DB oturup açıp kapatır
+
+    Select:	Session session = entityManager.unwrap(Session.class);
+	        List<City> cities =session.createQuery("from City",City.class).getResultList();
+	        return cities;
+
+    Insert: Session session = entityManager.unwrap(Session.class);
+	        session.saveOrUpdate(city);
+
+    Update: Session session = entityManager.unwrap(Session.class);
+	        session.saveOrUpdate(city);
+
+    Delete: Session session = entityManager.unwrap(Session.class);
+	        session.delete(city);
+
+
+- Spring anotasyonları
+@Autowired: Manual yapılandırmaya gerek kalmadan gerekli bağımlılıları kontrol eder
+@Controller: Kullanıcının isteğini işler ve uygun yanıt döner
+@RestController: Restful servis, Json ve Xml yanıt dönerler
+@RequestMapping: Class Düzeyinde bir url kökü belirler
+@GetMapping: Methodlar için url kökü belirler
+@Repository: Veritabanı katmanı olduğunu belirtir
+@Service: Hizmet katmanı olduğunu belirtir
